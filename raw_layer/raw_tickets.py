@@ -15,19 +15,17 @@ conn = psycopg2.connect(
 cur = conn.cursor()
 
 cur.execute("""
-create table if not exists raw_tickets (
-    payload jsonb
-);
+--drop table if exists raw_tickets;   
+create table if not exists raw_tickets (payload jsonb);
 """)
 
 response = requests.get(API_URL)
 response.raise_for_status()
 
 tickets = response.json()
+print(tickets["data"])
 
-tickets
-
-for ticket in tickets:
+for ticket in tickets["data"]:
     cur.execute(
         "insert into raw_tickets (payload) values (%s)",
         [json.dumps(ticket)]
