@@ -4,6 +4,9 @@ __pycache__/
 *.pyo
 *.pyd
 
+#Libs
+Lib/
+
 # Virtual environment
 case_fretadao/
 venv/
