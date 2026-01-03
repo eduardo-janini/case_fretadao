@@ -1,15 +1,13 @@
 # Python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-
-#Libs
-Lib/
 
 # Virtual environment
-case_fretadao/
+Lib/
+Scripts/
+Include/
 venv/
+case_fretadao/
 
 # dbt
 dbt_packages/
