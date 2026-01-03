@@ -1,13 +1,8 @@
+{{ config(materialized='view') }}
+
 with source as (
     select payload from {{ source('raw', 'raw_tickets') }}
 ),
-
--- explode as (
---     select
---         jsonb_array_elements(payload -> 'data') as data
---     from
---         source
--- ),
 
 tipagem as (
     select
