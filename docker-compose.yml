@@ -1,0 +1,20 @@
+services:
+  api:
+    image: ghcr.io/fretadao/tickets_fake_api:latest
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  datawarehouse:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: datawarehouse
+    ports:
+      - "5432:5432"

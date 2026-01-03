@@ -1,0 +1,3 @@
+-- select
+--     payload
+-- from {{ source('raw_tickets', 'tickets') }}

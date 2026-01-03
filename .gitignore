@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+case_fretadao/
+venv/
+
+# dbt
+dbt_packages/
+target/
+logs/
+
+# Environment
+.env
