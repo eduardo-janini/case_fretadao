@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: stg_ticket_metrics
+    description: "Métricas dos tickets extraídos da API, normalizados e tipados (staging layer)"
+    columns:
+      - name: ticket_metrics_id
+        description: "Identificador do IDM de métricas do ticket"
+        tests:
+          - not_null
+          - unique
+      - name: ticket_id
+        description: "Identificador único do ticket"
+        tests:
+          - not_null
+
+      - name: created_at
+        description: "Data de criação do ticket"
+        tests :
+          - not_null
+      - name: assigned_at
+        description: "Data da última atualização do ticket"
+      - name: assignee_updated_at
+        description: "Data da última atualização do ticket"
+      - name: solved_at
+        description: "Data da última atualização do ticket"
+        
+      - name: on_hold_time_in_minutes
+        description: "Tempo em minutos que o ticket ficou em espera"
+        tests :
+          - not_null
+      - name: reopens
+        description: "Número de reaberturas do ticket"
+        tests :
+          - not_null
+      - name: replies
+        description: "Número de respostas do ticket"
+        tests :
+          - not_null
+      - name: reply_time_in_minutes
+        description: "Tempo para a primeira resposta em minutos"
+        tests :
+         - not_null
+      - name: requester_wait_time_in_minutes
+        description: "Tempo total de espera do solicitante em minutos"
+        tests :
+          - not_null
+      - name: satisfaction_score
+        description: "Score de satisfação do cliente (1 a 5)"
