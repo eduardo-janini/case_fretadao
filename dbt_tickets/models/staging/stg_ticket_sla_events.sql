@@ -24,6 +24,3 @@ tipagem as (
 )
 
 select * from tipagem
-
-"metric": "reply_time",
-"type": "fulfill"

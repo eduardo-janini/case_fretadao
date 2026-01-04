@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: stg_tickets
+    description: "Tickets extraídos da API, normalizados e tipados (staging layer)"
+    columns:
+      - name: ticket_id
+        description: "Identificador único do ticket"
+        tests:
+          - not_null
+          - unique
+      - name: assignee_id
+        description: "ID do responsável pelo ticket"
+      - name: group_id
+        description: "ID do grupo associado ao ticket"
+        tests:
+          - not_null
+      - name: organization_id
+        description: "Organização associada ao ticket"
+
+      - name: created_at
+        description: "Data de criação do ticket"
+        tests :
+          - not_null
+      - name: updated_at
+        description: "Data da última atualização do ticket"
+        tests :
+          - not_null
+        
+      - name: channel
+        description: "Canal pelo qual o ticket foi criado"
+        tests :
+          - not_null
+          - accepted_values:
+              values: ['email', 'phone', 'chat']
+      - name: status
+        description: "Status atual do ticket"
+        tests :
+          - not_null
+          - accepted_values:
+              values: ['open', 'pending', 'hold', 'solved', 'closed', 'deleted']
+      - name: priority
+        description: "Prioridade do ticket"
+        tests :
+          - not_null
+          - accepted_values:
+              values: ['low', 'normal', 'high', 'urgent']
+      - name: type
+        description: "Tipo do ticket"
+        tests :
+         - not_null
+         - accepted_values:
+             values: ['question', 'incident', 'problem', 'task']
+      - name: description
+        description: "Descrição detalhada do ticket"
+        tests :
+          - not_null
+      - name: url
+        description: "URL do ticket no sistema"
+        tests :
+          - not_null
+      - name: public
+        description: "Indica se o ticket é público"
+        tests :
+          - not_null
+      - name: custom_fields
+        description: "Campos personalizados associados ao ticket"

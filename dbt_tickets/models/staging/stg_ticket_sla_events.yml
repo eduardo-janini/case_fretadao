@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_ticket_sla_events
+    description: "Eventos SLA dos tickets extraídos da API, normalizados e tipados (staging layer)"
+    columns:
+      - name: ticket_sla_event_id
+        description: "Identificador único do evento SLA do ticket"
+        tests:
+          - not_null
+          - unique
+      - name: ticket_id
+        description: "ID do ticket associado ao evento SLA"
+        tests:
+          - not_null
+
+      - name: time
+        description: "Data quando o evento SLA ocorreu"
+        tests :
+          - not_null
+        
+      - name: metric
+        description: "Métrica associada ao evento SLA"
+        tests :
+          - not_null
+          - accepted_values:
+              values: ['reply_time', 'requester_wait_time']
+      - name: type
+        description: "Se o SLA está sendo cumprido ou violado"
+        tests :
+          - not_null
+          - accepted_values:
+              values: ['fulfill', 'breach']
+
+      - name: sla
+        description: "Campo com detalhes da política de SLA"
+        tests :
+          - not_null
