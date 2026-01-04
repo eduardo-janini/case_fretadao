@@ -8,14 +8,14 @@ conn = psycopg2.connect(
     host="localhost",
     port=5432,
     database="datawarehouse",
-    ticket_sla_event="postgres",
+    user="postgres",
     password="admin"
 )
 
 cur = conn.cursor()
 
 cur.execute("""
-drop table if exists raw_ticket_sla_events cascade;   
+--drop table if exists raw_ticket_sla_events cascade;   
 create table if not exists raw_ticket_sla_events (payload jsonb);
 """)
 
