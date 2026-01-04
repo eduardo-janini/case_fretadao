@@ -15,7 +15,7 @@ conn = psycopg2.connect(
 cur = conn.cursor()
 
 cur.execute("""
---drop table if exists raw_organizations cascade;   
+drop table if exists raw_organizations cascade;   
 create table if not exists raw_organizations (payload jsonb);
 """)
 
