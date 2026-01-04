@@ -7,16 +7,15 @@ with source as (
 tipagem as (
     select
         -- IDs 
-        (payload ->> 'id')::int as organization_id,
+        {{ cast_int("payload ->> 'id'") }} as organization_id,
         payload ->> 'external_id' as external_id,
 
         -- Dates
-        (payload ->> 'created_at')::timestamp as created_at,
-        (payload ->> 'updated_at')::timestamp as updated_at,
+        {{ cast_timestamp("payload ->> 'created_at'") }} as created_at,
+        {{ cast_timestamp("payload ->> 'updated_at'") }} as updated_at,
         
         -- Strings
         payload ->> 'name' as name
-        
     from
         source
 )

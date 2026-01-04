@@ -7,11 +7,11 @@ with source as (
 tipagem as (
     select
         -- IDs 
-        (payload ->> 'id')::int as ticket_sla_event_id,
-        (payload ->> 'ticket_id')::int as ticket_id,
+        {{ cast_int("payload ->> 'id'") }} as ticket_sla_event_id,
+        {{ cast_int("payload ->> 'ticket_id'") }} as ticket_id,
 
         -- Dates
-        (payload ->> 'time')::timestamp as time,
+        {{ cast_timestamp("payload ->> 'time'") }} as time,
         
         -- Strings
         payload ->> 'metric' as metric,

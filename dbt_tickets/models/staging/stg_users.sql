@@ -7,20 +7,20 @@ with source as (
 tipagem as (
     select
         -- IDs 
-        (payload ->> 'id')::int as user_id,
-        (payload ->> 'organization_id')::int as organization_id,
+        {{ cast_int("payload ->> 'id'") }} as user_id,
+        {{ cast_int("payload ->> 'organization_id'") }} as organization_id,
         payload ->> 'external_id' as external_id,
 
         -- Dates
-        (payload ->> 'created_at')::timestamp as created_at,
-        (payload ->> 'updated_at')::timestamp as updated_at,
-        
+        {{ cast_timestamp("payload ->> 'created_at'") }} as created_at,
+        {{ cast_timestamp("payload ->> 'updated_at'") }} as updated_at,
+
         -- Strings
         payload ->> 'name' as name,
         payload ->> 'email' as email,
 
         -- Booleans
-        (payload ->> 'active')::boolean as active
+        {{ cast_boolean("payload ->> 'active'") }} as active
     from
         source
 )

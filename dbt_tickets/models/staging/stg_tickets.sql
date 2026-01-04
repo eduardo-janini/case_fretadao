@@ -7,14 +7,14 @@ with source as (
 tipagem as (
     select
         -- IDs 
-        (payload ->> 'id')::int as ticket_id,
-        (payload ->> 'assignee_id')::int as assignee_id,
-        (payload ->> 'group_id')::int as group_id,
-        (payload ->> 'organization_id')::int as organization_id,
+        {{ cast_int("payload ->> 'id'") }} as ticket_id,
+        {{ cast_int("payload ->> 'assignee_id'") }} as assignee_id,
+        {{ cast_int("payload ->> 'group_id'") }} as group_id,
+        {{ cast_int("payload ->> 'organization_id'") }} as organization_id,
 
         -- Dates
-        (payload ->> 'created_at')::timestamp as created_at,
-        (payload ->> 'updated_at')::timestamp as updated_at,
+        {{ cast_timestamp("payload ->> 'created_at'") }} as created_at,
+        {{ cast_timestamp("payload ->> 'updated_at'") }} as updated_at,
         
         -- Strings
         payload ->> 'channel' as channel,
@@ -25,7 +25,7 @@ tipagem as (
         payload ->> 'url' as url,
 
         -- Booleans
-        (payload ->> 'public')::boolean as public,
+        {{ cast_boolean("payload ->> 'public'") }} as public,
 
         -- Demais campos
         payload -> 'custom_fields' as custom_fields
