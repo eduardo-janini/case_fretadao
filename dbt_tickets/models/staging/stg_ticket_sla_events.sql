@@ -7,7 +7,7 @@ with source as (
 tipagem as (
     select
         -- IDs 
-        {{ cast_int("payload ->> 'id'") }} as ticket_sla_event_id,
+        {{ cast_int("payload ->> 'id'") }} as sla_event_id,
         {{ cast_int("payload ->> 'ticket_id'") }} as ticket_id,
 
         -- Dates
@@ -16,7 +16,6 @@ tipagem as (
         -- Strings
         payload ->> 'metric' as metric,
         payload ->> 'type' as type,
-
         -- Demais campos
         payload -> 'sla' as sla
     from

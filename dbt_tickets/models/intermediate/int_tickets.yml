@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_tickets
+  - name: int_tickets
     description: "Tickets extraídos da API, normalizados e tipados (staging layer)"
     columns:
       - name: ticket_id
@@ -45,7 +45,7 @@ models:
           - not_null
           - accepted_values:
               values: ['low', 'normal', 'high', 'urgent']
-      - name: type
+      - name: ticket_type
         description: "Tipo do ticket"
         tests :
          - not_null
@@ -63,7 +63,16 @@ models:
         description: "Indica se o ticket é público"
         tests :
           - not_null
-      - name: custom_fields
-        description: "Campos personalizados associados ao ticket"
+
+      - name: tipo_servico
+        description: "Tipos de serviço associados ao ticket"
         tests :
           - not_null
+      - name: desc_regiao
+        description: "Descrição da região associada ao ticket"
+      - name: tipo_contrato
+        description: "Tipos de contrato associados ao ticket"
+      - name: tipo_veiculo
+        description: "Tipos de veículo associados ao ticket"
+      - name: tipo_fretamento
+        description: "Tipos de fretamento associados ao ticket"

@@ -12,7 +12,7 @@ with reference as (
 exploded as (
     select
         ticket_id,
-        (field ->> 'id')::int as field_id,
+        {{ cast_int("field ->> 'id'") }} as field_id,
         field ->> 'value'     as field_value
     from
         reference
