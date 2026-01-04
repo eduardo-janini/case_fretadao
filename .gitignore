@@ -16,3 +16,4 @@ logs/
 
 # Environment
 .env
+case_fretadao/pyvenv.cfg
