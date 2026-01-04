@@ -15,6 +15,7 @@ tipagem as (
         -- Dates
         (payload ->> 'created_at')::timestamp as created_at,
         (payload ->> 'updated_at')::timestamp as updated_at,
+        
         -- Strings
         payload ->> 'channel' as channel,
         payload ->> 'status' as status,

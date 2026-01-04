@@ -4,4 +4,14 @@ sources:
   - name: raw
     schema: public
     tables:
+      - name: raw_groups
+
+      - name: raw_organizations
+
+      - name: raw_ticket_metrics
+
       - name: raw_tickets
+
+      - name: raw_users
+
+      - name: raw_ticket_sla_events
