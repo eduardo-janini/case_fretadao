@@ -1,17 +1,11 @@
 import requests
 import psycopg2
 import json
+from dbconfig import DB_CONFIG
 
 API_URL = "http://localhost:8000/users"
 
-conn = psycopg2.connect(
-    host="localhost",
-    port=5432,
-    database="datawarehouse",
-    user="postgres",
-    password="admin"
-)
-
+conn = psycopg2.connect(**DB_CONFIG)
 cur = conn.cursor()
 
 cur.execute("""
