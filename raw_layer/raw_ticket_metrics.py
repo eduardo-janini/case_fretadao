@@ -1,7 +1,7 @@
 import requests
 import psycopg2
 import json
-from .dbconfig import DB_CONFIG
+from dbconfig import DB_CONFIG
 
 API_URL = "http://localhost:8000/ticket_metrics"
 
