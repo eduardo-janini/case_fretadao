@@ -32,25 +32,25 @@ models:
         tests :
           - not_null
           - accepted_values:
-              values: ['email', 'phone', 'chat']
+              arguments: ['email', 'phone', 'chat']
       - name: status
         description: "Status atual do ticket"
         tests :
           - not_null
           - accepted_values:
-              values: ['open', 'pending', 'hold', 'solved', 'closed', 'deleted']
+              arguments: ['open', 'pending', 'hold', 'solved', 'closed', 'deleted']
       - name: priority
         description: "Prioridade do ticket"
         tests :
           - not_null
           - accepted_values:
-              values: ['low', 'normal', 'high', 'urgent']
+              arguments: ['low', 'normal', 'high', 'urgent']
       - name: ticket_type
         description: "Tipo do ticket"
         tests :
          - not_null
          - accepted_values:
-             values: ['question', 'incident', 'problem', 'task']
+             arguments: ['question', 'incident', 'problem', 'task']
       - name: description
         description: "Descrição detalhada do ticket"
         tests :
