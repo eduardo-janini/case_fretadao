@@ -7,14 +7,14 @@ def load_raw(table_name, records):
 
     cur.execute(f"""
         drop table if exists {table_name} cascade;
-        --create table {table_name} (payload jsonb);
+        create table {table_name} (payload jsonb);
     """)
 
-    # for record in records:
-    #     cur.execute(
-    #         f"insert into {table_name} (payload) values (%s)",
-    #         [json.dumps(record)]
-    #     )
+    for record in records:
+        cur.execute(
+            f"insert into {table_name} (payload) values (%s)",
+            [json.dumps(record)]
+        )
 
     conn.commit()
     cur.close()
