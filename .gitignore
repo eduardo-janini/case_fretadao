@@ -19,3 +19,6 @@ logs/
 case_fretadao/pyvenv.cfg
 case_fretadao\pyvenv.cfg
 pyvenv.cfg
+
+# IDEs
+.vscode/
