@@ -22,4 +22,11 @@ tipagem as (
         source
 )
 
-select * from tipagem
+select *
+from(
+{{ dedup(
+    relation = 'tipagem',
+    partition_by = ['sla_event_id'],
+    order_by = ['event_time']
+) }}
+) as final

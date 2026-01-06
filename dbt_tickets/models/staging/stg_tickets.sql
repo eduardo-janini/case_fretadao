@@ -33,4 +33,11 @@ tipagem as (
         source
 )
 
-select * from tipagem
+select *
+from(
+{{ dedup(
+    relation = 'tipagem',
+    partition_by = ['ticket_id'],
+    order_by = ['updated_at', 'created_at']
+) }}
+) as final
