@@ -11,8 +11,9 @@ API → RAW → STAGING → INTERMEDIATE → MARTS → ANALYSES
 - Modelos intermediários apenas para dados aninhados ou baseados em eventos
 
 ## Como rodar
-docker compose up
-python -m raw_layer.run_all
-dbt run
-dbt test
-dbt docs serve
+1. docker compose up
+2. python -m raw_layer.run_all
+    - python -m raw_layer.drop_tables: Adicionei um script para dropar a camada raw, e por consequência, as view dependentes
+3. dbt run
+4. dbt test
+5. dbt docs serve
