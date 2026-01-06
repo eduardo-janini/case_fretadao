@@ -1,3 +1,7 @@
+-- dbt_tickets/macros/dedup.sql
+-- Este arquivo é uma macro do dbt que realiza a deduplicação de registros em uma tabela ou relação.
+-- A macro utiliza a função row_number() para identificar e manter apenas o primeiro registro
+
 {% macro dedup(
     relation,
     partition_by,
