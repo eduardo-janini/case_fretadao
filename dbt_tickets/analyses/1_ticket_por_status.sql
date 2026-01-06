@@ -1,8 +1,8 @@
 select
     ticket_status,
-    count(*) as total_tickets
+    count(distinct ticket_id) as total_tickets
 from
-    {{ ref('int_tickets') }}
+    {{ ref('fat_tickets') }}
 group by
     ticket_status
 order by

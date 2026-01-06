@@ -6,8 +6,8 @@ with tratamento as (
     t.tipo_servico,
     tm.solved_at - tm.created_at as tempo_solucao
 from
-    {{ ref("int_tickets")}} as t
-    inner join {{ ref("stg_ticket_metrics") }} as tm using(ticket_id)
+    {{ ref("fat_tickets")}} as t
+    inner join {{ ref("fat_ticket_metrics") }} as tm using(ticket_id)
 where
     tm.solved_at is not null)
 select

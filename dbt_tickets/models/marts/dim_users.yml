@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: "Usuários extraídos da API, normalizados e tipados (staging layer)"
+    columns:
+      - name: user_id
+        description: "Identificador único do usuário"
+        tests:
+          - not_null
+          - unique
+      - name: organization_id
+        description: "Organização associada ao usuário"
+      - name: external_id
+        description: "ID externo do usuário"
+        tests :
+          - not_null
+
+      - name: created_at
+        description: "Data de criação do usuário"
+        tests :
+          - not_null
+      - name: updated_at
+        description: "Data da última atualização do usuário"
+        tests :
+          - not_null
+        
+      - name: user_name
+        description: "Nome do usuário"
+        tests :
+          - not_null
+      - name: email
+        description: "Email do usuário"
+        tests :
+          - not_null
+              
+      - name: active
+        description: "Indica se o usuário está ativo"
+        tests :
+          - not_null

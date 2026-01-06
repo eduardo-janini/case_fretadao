@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_groups
+    description: "Grupos extraídos da API, normalizados e tipados (staging layer)"
+    columns:
+      - name: group_id
+        description: "ID único do grupo"
+        tests:
+          - not_null
+          - unique
+
+      - name: created_at
+        description: "Data de criação do grupo"
+        tests :
+          - not_null
+      - name: updated_at
+        description: "Data da última atualização do grupo"
+        tests :
+          - not_null
+        
+      - name: group_name
+        description: "Nome do grupo"
+        tests :
+          - not_null
+      - name: group_description
+        description: "Descrição do grupo"
+        tests :
+          - not_null

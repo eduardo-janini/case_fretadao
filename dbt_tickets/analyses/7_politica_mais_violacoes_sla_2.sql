@@ -7,7 +7,7 @@ select
     tse.sla_policy_title,
     count(distinct tse.sla_event_id) as total_violations
 from
-    {{ ref("int_ticket_sla_events")}} as tse
+    {{ ref("fat_ticket_sla_events")}} as tse
 where
     tse.event_type = 'breach'
 group by

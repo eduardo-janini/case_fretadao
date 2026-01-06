@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_organizations
+    description: "Organizações extraídas da API, normalizadas e tipadas (staging layer)"
+    columns:
+      - name: organization_id
+        description: "Identificador único da organização"
+        tests:
+          - not_null
+          - unique
+      - name: external_id
+        description: "ID externo da organização"
+        tests:
+          - not_null
+
+      - name: created_at
+        description: "Data de criação da organização"
+        tests :
+          - not_null
+      - name: updated_at
+        description: "Data da última atualização da organização"
+        tests :
+          - not_null
+        
+      - name: organization_name
+        description: "Nome da organização"
+        tests :
+          - not_null
