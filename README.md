@@ -11,6 +11,8 @@ API → RAW → STAGING → INTERMEDIATE → MARTS → ANALYSES
 - Modelos intermediários apenas para dados aninhados ou baseados em eventos
 
 ## Como rodar
+- pip install -r requirements.txt (caso seja necessário instalar alguma lib)
+
 1. docker compose up
 2. python -m raw_layer.run_all
     - python -m raw_layer.drop_tables: Adicionei um script para dropar a camada raw, e por consequência, as view dependentes
