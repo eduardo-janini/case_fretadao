@@ -15,7 +15,7 @@ tipagem as (
         {{ cast_timestamp("payload ->> 'updated_at'") }} as updated_at,
         
         -- Strings
-        payload ->> 'name' as name
+        payload ->> 'name' as organization_name
     from
         source
 )
