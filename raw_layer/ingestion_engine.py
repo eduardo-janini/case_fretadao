@@ -12,6 +12,7 @@ Funções:
 import json
 from .dbconnection import get_connection
 
+# Realiza uma carga incremental, inserindo novos registros na tabela
 def load_raw_incremental(table_name, records):
     conn = get_connection()
     cur = conn.cursor()
@@ -30,6 +31,7 @@ def load_raw_incremental(table_name, records):
     cur.close()
     conn.close()
 
+# Realiza uma carga completa, truncando a tabela antes de inserir novos dados
 def load_raw_full_refresh(table_name, records):
     conn = get_connection()
     cur = conn.cursor()

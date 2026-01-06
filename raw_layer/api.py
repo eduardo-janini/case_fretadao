@@ -10,12 +10,11 @@ Functions:
     fetch(endpoint, params=None): Realiza uma requisição GET à API e retorna
                                    a resposta em formato JSON.
 """
-
-
 import requests
 
 API_BASE_URL = "http://localhost:8000"
 
+# Faz uma requisição GET à API e retorna a resposta em formato JSON.
 def fetch(endpoint, params=None):
     response = requests.get(
         f"{API_BASE_URL}/{endpoint}",

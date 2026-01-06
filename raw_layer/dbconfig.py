@@ -18,7 +18,6 @@ Note:
     expostas em repositórios públicos.
 """
 
-
 DB_CONFIG = {
     "host": "localhost",
     "port": 5432,

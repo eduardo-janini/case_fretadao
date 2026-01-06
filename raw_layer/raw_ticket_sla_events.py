@@ -25,6 +25,7 @@ TIME_FIELD = "time"
 
 
 def main():
+    # Obtém o último ponto de verificação (checkpoint) para saber a partir de quando buscar novos dados
     last_checkpoint = get_checkpoint(TABLE_NAME)
 
     params = {}
@@ -40,6 +41,7 @@ def main():
 
     load_raw_incremental(TABLE_NAME, records)
 
+    # Atualiza o checkpoint com o timestamp máximo dos registros ingeridos
     max_timestamp = max(
         r[TIME_FIELD] for r in records if r.get(TIME_FIELD)
     )

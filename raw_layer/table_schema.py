@@ -10,7 +10,7 @@ Funções:
 
 from .dbconnection import get_connection
 
-
+# Recupera o ponto de verificação para a tabela especificada
 def get_checkpoint(table_name):
     conn = get_connection()
     cur = conn.cursor()
@@ -30,7 +30,7 @@ def get_checkpoint(table_name):
 
     return row[0] if row else None
 
-
+# Atualiza ou insere o ponto de verificação para a tabela especificada
 def update_checkpoint(table_name, last_processed_at):
     conn = get_connection()
     cur = conn.cursor()

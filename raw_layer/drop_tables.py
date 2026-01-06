@@ -22,7 +22,7 @@ RAW_TABLES = [
     "raw_organizations",
 ]
 
-
+# Redefine a camada bruta de dados removendo tabelas e limpando checkpoints.
 def reset_raw_layer():
     conn = get_connection()
     cur = conn.cursor()

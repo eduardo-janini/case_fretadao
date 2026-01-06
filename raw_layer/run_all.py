@@ -19,7 +19,7 @@ from .raw_tickets import main as run_tickets
 from .raw_ticket_metrics import main as run_ticket_metrics
 from .raw_ticket_sla_events import main as run_ticket_sla_events
 
-
+# Inicia o processo de ingestão da camada bruta de dados.
 def main():
     print("Starting raw layer ingestion...")
 
