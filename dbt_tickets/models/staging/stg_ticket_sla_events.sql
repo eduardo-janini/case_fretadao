@@ -11,11 +11,11 @@ tipagem as (
         {{ cast_int("payload ->> 'ticket_id'") }} as ticket_id,
 
         -- Dates
-        {{ cast_timestamp("payload ->> 'time'") }} as time,
+        {{ cast_timestamp("payload ->> 'time'") }} as event_time,
         
         -- Strings
         payload ->> 'metric' as metric,
-        payload ->> 'type' as type,
+        payload ->> 'type' as event_type,
         -- Demais campos
         payload -> 'sla' as sla
     from

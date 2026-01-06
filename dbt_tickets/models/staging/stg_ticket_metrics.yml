@@ -19,11 +19,11 @@ models:
         tests :
           - not_null
       - name: assigned_at
-        description: "Data da última atualização do ticket"
+        description: "Data de quando o ticket foi atribuído"
       - name: assignee_updated_at
-        description: "Data da última atualização do ticket"
+        description: "Data de quando o responsável pelo ticket foi atualizado"
       - name: solved_at
-        description: "Data da última atualização do ticket"
+        description: "Data de quando o ticket foi resolvido"
         
       - name: on_hold_time_in_minutes
         description: "Tempo em minutos que o ticket ficou em espera"

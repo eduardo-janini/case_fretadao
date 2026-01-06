@@ -18,11 +18,11 @@ tipagem as (
         
         -- Strings
         payload ->> 'channel' as channel,
-        payload ->> 'status' as status,
+        payload ->> 'status' as ticket_status,
         payload ->> 'priority' as priority,
-        payload ->> 'type' as type,
-        payload ->> 'description' as description,
-        payload ->> 'url' as url,
+        payload ->> 'type' as ticket_type,
+        payload ->> 'description' as ticket_description,
+        payload ->> 'url' as ticket_url,
 
         -- Booleans
         {{ cast_boolean("payload ->> 'public'") }} as public,

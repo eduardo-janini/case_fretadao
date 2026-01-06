@@ -33,7 +33,7 @@ models:
           - not_null
           - accepted_values:
               arguments: ['email', 'phone', 'chat']
-      - name: status
+      - name: ticket_status
         description: "Status atual do ticket"
         tests :
           - not_null
@@ -45,17 +45,17 @@ models:
           - not_null
           - accepted_values:
               arguments: ['low', 'normal', 'high', 'urgent']
-      - name: type
+      - name: ticket_type
         description: "Tipo do ticket"
         tests :
          - not_null
          - accepted_values:
              arguments: ['question', 'incident', 'problem', 'task']
-      - name: description
+      - name: ticket_description
         description: "Descrição detalhada do ticket"
         tests :
           - not_null
-      - name: url
+      - name: ticket_url
         description: "URL do ticket no sistema"
         tests :
           - not_null
