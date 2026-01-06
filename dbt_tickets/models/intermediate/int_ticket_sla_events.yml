@@ -9,7 +9,7 @@ models:
         tests :
           - not_null
           - accepted_values:
-              arguments: [1, 2, 3, 4]
+              values: [1, 2, 3, 4]
       - name: sla_policy_title
         description: "Título da política de SLA"
         tests :

@@ -24,13 +24,13 @@ models:
         tests :
           - not_null
           - accepted_values:
-              arguments: ['reply_time', 'requester_wait_time']
+              values: ['reply_time', 'requester_wait_time']
       - name: event_type
         description: "Se o SLA está sendo cumprido ou violado"
         tests :
           - not_null
           - accepted_values:
-              arguments: ['fulfill', 'breach']
+              values: ['fulfill', 'breach']
 
       - name: sla
         description: "Campo com detalhes da política de SLA"
