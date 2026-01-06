@@ -1,8 +1,9 @@
 -- Não ficou claro se deveria quebrar por métrica
 -- ou somente por política de SLA.
--- Optei somente pela coluna de política de SLA.
+-- Optei por ambas as colunas nesse caso.
 
 select
+    tse.metric,
     tse.sla_policy_title,
     count(distinct tse.sla_event_id) as total_violations
 from
@@ -10,6 +11,7 @@ from
 where
     tse.event_type = 'breach'
 group by
+    tse.metric,
     tse.sla_policy_title
 order by
     total_violations desc
