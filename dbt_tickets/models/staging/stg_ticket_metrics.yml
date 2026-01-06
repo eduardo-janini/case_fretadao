@@ -4,7 +4,7 @@ models:
   - name: stg_ticket_metrics
     description: "Métricas dos tickets extraídos da API, normalizados e tipados (staging layer)"
     columns:
-      - name: ticket_metrics_id
+      - name: ticket_metric_id
         description: "Identificador do ID de métricas do ticket"
         tests:
           - not_null
