@@ -3,11 +3,7 @@ __pycache__/
 *.pyc
 
 # Virtual environment
-Lib/
-Scripts/
-Include/
 venv/
-case_fretadao/
 
 # dbt
 dbt_packages/
@@ -16,9 +12,7 @@ logs/
 
 # Environment
 .env
-case_fretadao/pyvenv.cfg
-case_fretadao\pyvenv.cfg
-pyvenv.cfg
 
 # IDEs
 .vscode/
+dbt_internal_packages/
