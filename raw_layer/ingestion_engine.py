@@ -1,3 +1,14 @@
+# raw_layer/ingestion_engine.py
+"""
+Este módulo contém funções para carregar dados em uma tabela de banco de dados PostgreSQL usando uma conexão definida em um módulo separado.
+Funções:
+- load_raw_incremental(table_name, records): 
+    Carrega registros incrementais em uma tabela especificada. Se a tabela não existir, ela será criada. Os registros são inseridos como objetos JSONB.
+- load_raw_full_refresh(table_name, records): 
+    Realiza uma atualização completa da tabela especificada, truncando-a antes de inserir novos registros. Assim como na função anterior, os registros são inseridos como objetos JSONB.
+"""
+
+
 import json
 from .dbconnection import get_connection
 

@@ -1,3 +1,13 @@
+# raw_layer/table_schema.py
+"""Este módulo contém funções para gerenciar pontos de verificação (checkpoints) em um banco de dados.
+Um ponto de verificação é utilizado para rastrear o último registro processado em uma tabela específica.
+Funções:
+- get_checkpoint(table_name): Recupera a data e hora do último processamento para a tabela especificada.
+    Retorna None se não houver registro encontrado.
+- update_checkpoint(table_name, last_processed_at): Atualiza ou insere um ponto de verificação para a tabela especificada,
+    definindo a data e hora do último processamento. Se a tabela já tiver um ponto de verificação, ele será atualizado."""
+
+
 from .dbconnection import get_connection
 
 
