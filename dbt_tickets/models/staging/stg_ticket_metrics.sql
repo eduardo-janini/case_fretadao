@@ -7,7 +7,7 @@ with source as (
 tipagem as (
     select
         -- IDs 
-        {{ cast_int("payload ->> 'id'") }} as ticket_metrics_id,
+        {{ cast_int("payload ->> 'id'") }} as ticket_metric_id,
         {{ cast_int("payload ->> 'ticket_id'") }} as ticket_id,
 
         -- Dates
