@@ -25,7 +25,7 @@ models:
         tests :
           - not_null
         
-      - name: name
+      - name: user_name
         description: "Nome do usuário"
         tests :
           - not_null

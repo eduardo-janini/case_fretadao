@@ -19,11 +19,11 @@ models:
         tests :
           - not_null
         
-      - name: name
+      - name: group_name
         description: "Nome do grupo"
         tests :
           - not_null
-      - name: description
+      - name: group_description
         description: "Descrição do grupo"
         tests :
           - not_null

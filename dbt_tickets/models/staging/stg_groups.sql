@@ -14,8 +14,8 @@ tipagem as (
         {{ cast_timestamp("payload ->> 'updated_at'") }} as updated_at,
 
         -- Strings
-        payload ->> 'name' as name,
-        payload ->> 'description' as description
+        payload ->> 'name' as group_name,
+        payload ->> 'description' as group_description
     from
         source
 )
