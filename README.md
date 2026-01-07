@@ -3,7 +3,7 @@
 ## Arquitetura
 API → RAW → STAGING → INTERMEDIATE → MARTS → ANALYSES
 
-## Key Decisions
+## Abordagem adotada
 - Ingestão incremental usando `start_time` da API
 - Atualização completa para entidades tipo dimensão
 - Camada raw apenas para anexação com deduplicação em staging
